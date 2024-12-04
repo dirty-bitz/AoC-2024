@@ -40,5 +40,4 @@ with open("2024/day2/inputs2.csv", "r") as file:
             if removal(list):
                 safe_count += 1
 
-
 print (safe_count)
