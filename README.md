@@ -1,3 +1,3 @@
 # YALL CHILL
-## STOP JUDGING
-### I DONT KNOW PYTHON
+### STOP JUDGING
+*I don't know python like that fr*
