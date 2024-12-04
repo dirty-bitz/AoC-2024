@@ -1,5 +1,8 @@
 import csv
 import re
+import time
+
+start_time = time.time()
 
 pattern = r"mul\(\d+,\d+\)|do\(\)|don't\(\)"
 matches = []
@@ -24,4 +27,7 @@ for x in matches:
         x = x.strip("mul()").split(",")
         int1, int2 = map(int, x)
         total += int1 * int2
+
+end_time = time.time()
 print("Total:", total)
+print(f"Time Elapsed: {(end_time - start_time) * 1000} ms")
