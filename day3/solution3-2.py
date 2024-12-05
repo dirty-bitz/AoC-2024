@@ -30,4 +30,4 @@ for x in matches:
 
 end_time = time.time()
 print("Total:", total)
-print(f"Time Elapsed: {(end_time - start_time) * 1000} ms")
+print(f"This took: {round((end_time - start_time) * 1000, 4)} ms")
