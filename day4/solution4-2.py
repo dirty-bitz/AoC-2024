@@ -54,19 +54,34 @@ def word_search(grid, key):
 
 def check_xmas_pattern(grid, rows, columns, x, y):
 
-    # M . S
-    # . A .
-    # M . S
-
     if valid(x-1, y-1, rows, columns) and valid(x+1, y+1, rows, columns) and valid(x+1, y-1, rows, columns) and valid(x-1, y+1, rows, columns):
-        # Check top-left to bottom-right)
-        if grid[x-1][y-1] == 'M' and grid[x][y] == 'A' and grid[x+1][y+1] == 'M':
-            if grid[x-1][y+1] == 'S' and grid[x+1][y-1] == 'S':
+
+        # M . M
+        # . A .
+        # S . S
+        if grid[x-1][y-1] == 'M' and grid[x][y] == 'A' and grid[x+1][y+1] == 'S':
+            if grid[x-1][y+1] == 'M' and grid[x+1][y-1] == 'S':
                 return True
         
-        # backwards
-        if grid[x+1][y-1] == 'M' and grid[x][y] == 'A' and grid[x-1][y+1] == 'M':
-            if grid[x+1][y+1] == 'S' and grid[x-1][y-1] == 'S':
+        # M . S
+        # . A .
+        # M . S
+        if grid[x-1][y-1] == 'M' and grid[x][y] == 'A' and grid[x+1][y+1] == 'S':
+            if grid[x-1][y+1] == 'S' and grid[x+1][y-1] == 'M':
+                return True
+            
+        # S . M
+        # . A .
+        # S . M
+        if grid[x-1][y-1] == 'S' and grid[x][y] == 'A' and grid[x+1][y+1] == 'M':
+            if grid[x-1][y+1] == 'M' and grid[x+1][y-1] == 'S':
+                return True
+            
+        # S . S
+        # . A .
+        # M . M
+        if grid[x-1][y-1] == 'S' and grid[x][y] == 'A' and grid[x+1][y+1] == 'M':
+            if grid[x-1][y+1] == 'S' and grid[x+1][y-1] == 'M':
                 return True
 
     return False
